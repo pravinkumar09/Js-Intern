@@ -1,5 +1,5 @@
 let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
-let dateradio = prompt('0. 12 hrs format \n 1. 24hrs format \nAnyother value defaults to 24hrs format');
+let dateradio = prompt('0. 12 hrs format \n 1. 24hrs format');
 const date = new Date()
 let day = date.getDay()
 let hours = date.getHours(); let minutes = date.getMinutes(); let seconds = date.getSeconds();
@@ -20,6 +20,9 @@ if (dateradio == 0) {
         document.body.innerText = days[day] + " | " + (hours) + " PM" + " : " + minutes + " : " + seconds
     }
 }
-else {
+else if (dateradio == 1) {
     document.body.innerText = days[day] + " | " + hours + " : " + minutes + " : " + seconds
+} else {
+    alert("enter format correctly")
+    window.location.reload()
 }
